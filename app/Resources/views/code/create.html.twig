@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Random code generator{% endblock %}
+
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-6">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+        </div>
+
+        <div class="col-md-6">
+            {% if filename is defined %}
+                <h2>File: <a href="/codes/{{ filename }}">{{ filename }}</a></h2>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
